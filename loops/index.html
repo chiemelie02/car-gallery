@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: white;
+            color: black;
+            transition: background-color 0.5s, color 0.5s;
+        }
+        .dark-mode{
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="toggleBackground()">Toggle Background</button>
+    <ul id="menu">
+        <li class="menu-item">Home</li>
+        <li class="menu-item2">About us</li>
+        <li class="menu-item3">Contact</li>
+    </ul>
+    <h1 id="text" class="main">Javascript</h1>
+    <h2 class="text2">Javascript2</h2>
+    <h2 class="text2">Javascript3</h2>
+    <!-- <input type="radio" name="gender" value="female"> -->
+    <input id="name" type="text" name="gender" value="male" placeholder="Enter name">
+    <br>
+    <!-- <button onclick="console.log('Hello World')">Click Me</button> -->
+     <!-- <button onclick="alert('Hello World')">Click Me</button> -->
+    <!-- <button onclick="greetClass()" id="btn">Click Me</button> -->
+    <button id="btn">Click Me</button>
+    <h1 id="content">Hello World</h1>
+    <button id="changeContentBtn">Change content</button>
+    <br>
+    <br>
+    <input id="submitInput" type="text" value="">
+    <button id="submit" type="submit">Submit</button>
+    <script>
+        // Toggling between light and dark mode 
+        function toggleBackground(){
+            document.body.classList.toggle('dark-mode')
+        }
+        // To display the content of an input on an alert pop up 
+        const targetBtn = document.getElementById('submit');
+        const alertFunction = function sayHello(){
+            const inputValue = document.getElementById('submitInput').value;
+            alert('Hello ' +  inputValue);
+        }
+        targetBtn.addEventListener('click', alertFunction)
+
+        // Using a button to change the content of another element eg H1 
+        const changeContent = document.getElementById('changeContentBtn');
+        const changeFunction = () => {
+            changeH1 = document.getElementById('content');
+            changeH1.innerHTML = "<h2>Content changed</h2><p>This is a new content</p>";
+            changeH1.style.cssText = "color: green; font-size: 1.5rem;"
+        };
+        changeContent.addEventListener('click', changeFunction);
+        // Adding event listeners 
+        // const greetClass = ()=> {
+        //     alert('good morning class');
+        // }
+
+        const greetClass = document.getElementById('btn')
+        greetClass.addEventListener('click', function(){
+            alert('Good morning class')
+        });
+
+        // const greetClass = document.getElementById('btn')
+        // greetClass.onclick = function(){
+        //     alert('Good morning class')
+        // };
+
+        // Removing event listeners 
+        // const greetClasss = ()=> {
+        //     alert('good morning class');
+        // }
+        // const greetClass = document.getElementById('btn')
+        // greetClass.addEventListener('click', greetClasss);
+        // greetClass.removeEventListener('click', greetClasss);
+
+        // Selecting using DOM 
+        // const element = document.getElementById('text')
+        // console.log(element)
+
+        // GETTING PARENT NODE FROM CHILD NODE
+        // const parentElement = document.querySelector('.menu-item');
+        // console.log(parentElement.parentNode);
+
+        // GETTING CHILDREN NODES FROM PARENT NODE 
+        // const childElement = document.querySelector('#menu');
+        // console.log(childElement.children);
+
+        // const childElement = document.querySelector('#menu');
+        // const firstChild = document.querySelector('.menu-item');
+        // console.log(firstChild.nextElementSibling);
+
+        // Changing the content of the html using inner html and text content 
+        // const element = document.querySelector('#text');
+        // element.innerHTML = "Hello";
+        // element.textContent = "Hi there";
+        // element.innerHTML = "<p>Hello</p>";
+        // element.textContent = "<p>Hi there</p>";
+
+        // const newElement = document.createElement('div');
+        // newElement.textContent = "Good morning";
+        // newElement.innerHTML = "<p>Good morning</p>";
+        // newElement.id = 'text'
+        // newElement.className = 'text'
+        // document.body.append(newElement)
+        // console.log(newElement);
+
+
+        // Adding and removing classes
+        // const removeElement = document.getElementById('menu');
+        // removeElement.remove();
+        // removeElement.removeChild(removeElement.lastElementChild);
+
+        // const addElement = document.getElementById('menu');
+        // const result = document.createElement('li');
+        // result.textContent = "Services";
+        // result.className = "menu-item";
+        // addElement.insertBefore(result, addElement.firstElementChild);
+        // addElement.insertBefore(result, addElement.lastElementChild);
+        // addElement.appendChild(result)
+
+        // ATTRIBUTE METHODS  
+        // const element = document.getElementById('name');
+        // console.log(element.getAttribute('placeholder'));
+
+        // const element = document.getElementById('name');
+        // element.setAttribute('class', 'sub');
+        // console.log(element);
+
+        // const element = document.getElementById('name');
+        // element.removeAttribute("value");
+        // console.log(element);
+
+        // const element = document.getElementById('name');
+        // console.log(element.hasAttribute("value"));
+
+        // Styling with js 
+        // const element = document.querySelector('#text');
+        // element.style.color = "yellow";
+        // element.style.backgroundColor = "green";
+        
+        // const element = document.querySelector('#text');
+        // element.style.cssText = "background-color: black; color: white;font-size: 5rem;";
+
+        // const getClass = document.querySelector('#text');
+        // console.log(getClass.className);
+
+        // Adding class names
+        // const getClass = document.querySelector('#text');
+        // getClass.className += " new";
+        // console.log(getClass);
+
+        // const element = document.querySelector('#text');
+        // element.classList.add('new');
+        // console.log(element);
+
+        // Removing class names 
+        // const element = document.querySelector('#text');
+        // element.classList.remove('new');
+        // console.log(element);
+
+        // Replacing class 
+        // const element = document.querySelector('#text');
+        // element.classList.replace('main', 'new');
+        // console.log(element);
+
+        // const element = document.querySelector('#text');
+        // element.classList.contain('main');
+        // console.log(element);
+    </script>
+    <script src="script2.js"></script>
+</body>
+</html>
